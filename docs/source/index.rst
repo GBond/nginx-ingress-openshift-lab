@@ -1,22 +1,24 @@
-Welcome to Lumache's documentation!
-===================================
+NGINX Kubernetes Ingress Controller
+-----------------------------------
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+|image00|
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+This solution is designed to share the experience of deploying a modern application along with the NGINX Kubernetes Ingress Controllerwithin Red Hat OpenShift. Throughout the solution are steps and notes highlighting the procedure to create a successful application deployment with NGINX Ingress Controller. Examples at the end of the solution are in place to share current relevant deployment styles for todays applications.
 
-.. note::
+NGINX Kubernetes Ingress Controller solution can run on multiple clouds. The documents below have an order of operation to deploy an application that leverages NGINX Ingress Controller. 
 
-   This project is under active development.
+.. warning:: The steps assume you are using the RH Demo system**
 
-Contents
---------
+.. |image00| image:: images/image00.png
+  :width: 75%
+  :align: middle
+
+**Configure and deploy and application with NGINX Ingress Controller**
 
 .. toctree::
+   :maxdepth: 1
+   :glob:
 
-   usage
-   api
+   labSetup*
+   lab*
+
