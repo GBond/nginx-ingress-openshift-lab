@@ -4,4 +4,4 @@ API
 .. autosummary::
    :toctree: generated
 
-   NGINX Ingress Controller
+   NGINX Ingress Controller for OpenShift
