@@ -25,7 +25,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/ingress-arcadia.yml
+   .. literalinclude :: templates/ingress-arcadia.yml
       :language: text
 
    Example:
@@ -58,14 +58,14 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadiaSecret.yml
+   .. literalinclude :: templates/arcadiaSecret.yml
       :language: text
 
    Step 2. Create NGINX Ingress Controller with HTTPS:
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/ingress-arcadia-https.yml
+   .. literalinclude :: templates/ingress-arcadia-https.yml
       :language: text
 
    Arcadia application is now exposed through the NGINX Ingress Controller on HTTPS!
@@ -80,7 +80,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/ingress-arcadia-https-monitor.yml
+   .. literalinclude :: templates/ingress-arcadia-https-monitor.yml
       :language: text
 
    Example:
@@ -107,7 +107,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/nginx-config-cache.yml
+   .. literalinclude :: templates/nginx-config-cache.yml
       :language: text
 
    Example:
@@ -124,7 +124,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/ingress-arcadia-cache.yml
+   .. literalinclude :: templates/ingress-arcadia-cache.yml
       :language: text
 
    Example:
@@ -147,21 +147,21 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadiaMTLSSecret.yml
+   .. literalinclude :: templates/arcadiaMTLSSecret.yml
       :language: text
 
    Step 2. Create the custom resource policy for mTLS
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadiaMTLSPolicy.yml
+   .. literalinclude :: templates/arcadiaMTLSPolicy.yml
       :language: text
 
    Step 3. Create NGINX Ingress Controller with HTTPS with Active Monitors, Caching:
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. literalinclude :: ../../../../../../solutions/delivery/application_delivery_controller/nginx/kic/templates/ingress-arcadia-mtls.yml
+   .. literalinclude :: templates/ingress-arcadia-mtls.yml
       :language: text
 
    Example:
