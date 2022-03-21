@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "NGINX Ingress Controller OpenShift Lab"
-authors = [{name = "nginx", email = "G.CHOW@F5"}]
+name = "lumache"
+authors = [{name = "NGINX", email = "g.chow@f5"}]
 dynamic = ["version", "description"]
