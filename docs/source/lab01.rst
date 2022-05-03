@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 NGINX Kubernetes Ingress Controller | Deployment
 ------------------------------------------------
 
