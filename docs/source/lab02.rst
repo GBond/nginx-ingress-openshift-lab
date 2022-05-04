@@ -27,7 +27,7 @@ NGINX Unit is a dynamic application server capable of running beside NGINX Plus 
 
    .. code-block::
 
-      kubectl apply -f /home/ubuntu/Desktop/f5-digital-customer-engagement-center/solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadia.yml
+      oc apply -f https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadia.yml
 
    Example:
 
@@ -39,7 +39,7 @@ NGINX Unit is a dynamic application server capable of running beside NGINX Plus 
 
    .. code-block::
 
-      kubectl get services
+      oc get services
 
    Example:
 
