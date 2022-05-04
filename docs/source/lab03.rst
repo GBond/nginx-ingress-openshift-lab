@@ -182,7 +182,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    .. code-block::
 
-      curl --insecure https://$nginx_ingress/ --cert /home/ubuntu/Desktop/f5-digital-customer-engagement-center/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem --key /home/ubuntu/Desktop/f5-digital-customer-engagement-center/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-key.pem
+      curl --insecure https://$nginx_ingress/ --cert https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem
 
    Example:
 
