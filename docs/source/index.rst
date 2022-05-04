@@ -17,6 +17,7 @@ NGINX Kubernetes Ingress Controller solution can run on multiple clouds. The doc
 
 .. toctree::
    :maxdepth: 1
+   :numbered:
    :glob:
 
    labSetup*

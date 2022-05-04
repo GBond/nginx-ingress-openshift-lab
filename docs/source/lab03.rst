@@ -105,14 +105,16 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    Step 1. Create NGINX Ingress Controller Caching Path:
 
-   In the terminal window, copy the below text and paste+enter:
+   Installed Operators -> nginx-ingress-operator.v0.5.1 -> NginxIngressController details
 
-   .. literalinclude :: templates/nginx-config-cache.yml
-      :language: text
+   .. code-block::
 
-   Example:
-
-   |image37|
+      configMapData:
+        proxy-protocol: "True"
+        real-ip-header: "proxy_protocol"
+        set-real-ip-from: "0.0.0.0/0"
+        http-snippets  : |
+          proxy_cache_path /var/tmp/a levels=1:2 keys_zone=my_cache:10m max_size=100m inactive=60m use_temp_path=off;
 
    Step 2.  NGINX Dashboard should be updated with the cache location
 
@@ -135,7 +137,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    NGINX Ingress Controller URL (replace with the nginx-ingress EXTERNAL-IP): ``https://EXTERNAL-IP/``
 
-4. HTTPS with Active Monitors, Caching, mTLS
+5. HTTPS with Active Monitors, Caching, mTLS
 
    NGINX Ingress Controller can participate in the mTLS cert exchange with services.
 
@@ -180,21 +182,17 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    .. code-block::
 
-      curl --insecure https://$nginx_ingress/ --cert /home/ubuntu/Desktop/f5-digital-customer-engagement-center/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem --key /home/ubuntu/Desktop/f5-digital-customer-engagement-center/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-key.pem
+      curl --insecure https://$nginx_ingress/ --cert https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem
 
    Example:
 
    |image44|
 
-5. The fun does not need to stop yet!
+6. The fun does not need to stop yet!
 
    The NGINX product team creates several examples of using NGINX VirtualServers, Ingress, and Configmaps, all of the examples in the `nginxinc GitHub repository`_ will also work in this environment.
 
-6. NGINX Examples have all been completed
-
-   At this point, as good stewards of automation, the next step is the destruction of the environment.
-
-   Proceed to `NGINX Kubernetes Ingress Controller | Destruction`_
+7. NGINX Examples have all been completed
 
 
 
