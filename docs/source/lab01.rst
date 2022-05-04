@@ -84,7 +84,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    .. code-block:: yaml
         :linenos:
-        
+
      apiVersion: v1
      kind: Service
      metadata:
@@ -196,5 +196,4 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 .. |image49| image:: images/image49.png
   :width: 50%
 
->>>>>>> 7a35708411bf6a2324892c2f3bb0dc757b65ce14
 .. _`Arcadia Application | Deployment`: lab02.html
