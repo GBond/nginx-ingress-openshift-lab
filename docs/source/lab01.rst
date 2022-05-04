@@ -8,7 +8,7 @@ Introduction
 
 With the infrastructure in place to support the solution, the NGINX Kubernetes Ingress Controller deployment can begin.
 
-What is NGINX Kubernetes Ingress Controller?
+*What is NGINX Kubernetes Ingress Controller?*
 
 NGINX Ingress Controller provides a robust feature set to secure, strengthen, and scale containerized apps, including:
 
@@ -20,7 +20,6 @@ NGNIX Ingress Controller has two offerings, an open-source edition and a purchas
    |image49|
 
 This solution uses the purchased NGINX Ingress Controller.
-
 
 Kubernetes deployments are typically maintained through manifest files. The deployment of the NGINX Ingress Controller will be created through manifests. Multiple Kubernetes resources can be made through a single file. When executed, Kubernetes will build all the resources. 
    Kubernetes resources types created:
@@ -36,9 +35,10 @@ Kubernetes deployments are typically maintained through manifest files. The depl
     - NGINX Ingress Controller deployment
     - NGINX Ingress Controller service
 
+A Kubernetes Operator is a method of packaging, deploying and managing a Kubernetes-native application. The NGINX Ingress Operator for OpenShift is a supported and certified mechanism for deploying NGINX Plus Ingress Controller for Kubernetes alongside the default router in an OpenShift environment, with point-and-click installation and automatic upgrades.
+
 Validate the NGINX Ingress Controller
 ##########################################
-The NGINX Ingress Operator for OpenShift is a supported and certified mechanism for deploying NGINX Plus Ingress Controller for Kubernetes alongside the default router in an OpenShift environment, with point-and-click installation and automatic upgrades.
 
 In this Lab, we already installed the NGINX Ingress Operator from the OpenShift console.
 
@@ -74,39 +74,17 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    NGINX Ingress Controller (all purchased editions) have an internal dashboard that can be exposed. The Dashboard presents analytic stats of services deployed on NGINX. These same stats can also be exposed for collection systems like Prometheus.
 
+
+   .. literalinclude :: nginx-ingress-dashboard.yml
+      :language: yaml
+
    In the terminal window copy the below text and paste+enter:
 
    .. code-block::
 
-      wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/nginx-ingress-dashboard.yml
-   
-   Modify the file 'vi nginx-ingress-dashboard.yml'
-
-   .. code-block:: yaml
-        :linenos:
-
-     apiVersion: v1
-     kind: Service
-     metadata:
-       name: dashboard-nginx-ingress
-       namespace: nginx-ingress
-       annotations:
-         service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
-     spec:
-       type: LoadBalancer
-       ports:
-       - port: 80
-         targetPort: 8080
-         protocol: TCP
-         name: http
-       selector:
-               app: my-nginx-ingress-controller
-
-   Apply the yaml:
-
-   .. code-block::
-
       oc apply -f nginx-ingress-dashboard.yml
+
+   Installed Operators -> nginx-ingress-operator.v0.5.1 -> NginxIngressController details
 
    .. code-block:: yaml
 
