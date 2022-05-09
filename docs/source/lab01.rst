@@ -48,15 +48,15 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
    
    .. code-block::
 
-      oc get pods -n nginx-ingress
+      oc get pods -n nginx-ingress -o wide
 
    |image24|
 
-2. From OpenShift Console, Click Installed Operators in the left navigation column. On the page that opens, click the NginxIngressController link in the Provided APIs column. NginxIngressController is a custom resource which the Operator uses to deploy the NGINX Plus Ingress Controller on the OpenShift cluster.
+2. From OpenShift Console, Click Operators -> Installed Operator in the left navigation column. On the page that opens, click the NginxIngressController link in the Provided APIs column. NginxIngressController is a custom resource which the Operator uses to deploy the NGINX Plus Ingress Controller on the OpenShift cluster.
 
    |image24-2|
 
-3. Validate that the NGINX Ingress Controller
+3. Validate that the NGINX Ingress Controller is running
 
    .. note:: If the NGINX Ingress Controller Pod is not in a **running** state, verify the **image:tag** value is correct from deployment manifest
 
@@ -68,7 +68,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    Example:
 
-   |image24|
+   |image24-3|
 
 4. Expose the NGINX Ingress Controller Dashboard
 
@@ -164,6 +164,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 .. |image23| image:: images/image23.png
 .. |image24| image:: images/image24.png
 .. |image24-2| image:: images/image24-2.png
+.. |image24-3| image:: images/image24-3.png
 .. |image26| image:: images/image26.png
 .. |image27| image:: images/image27.png
 .. |image28| image:: images/image28.png
