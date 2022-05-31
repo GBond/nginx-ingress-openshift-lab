@@ -80,7 +80,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
    .. literalinclude :: nginx-ingress-dashboard.yml
       :language: yaml
 
-   Get the dashboard yaml.  In the terminal window, copy the below text and paste+enter:
+   Get the dashboard yaml.  Open the yaml file, and update the app selector to *my-nginx-ingress-controller*:
    
      .. code-block::
 
