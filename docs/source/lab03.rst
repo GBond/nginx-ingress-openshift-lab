@@ -105,7 +105,8 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    Step 1. Create NGINX Ingress Controller Caching Path:
 
-   Installed Operators -> nginx-ingress-operator.v0.5.1 -> NginxIngressController details
+   From OpenShift Console, Click Operators -> Installed Operator in the left navigation column. On the page that opens, click the Nginx Ingress Controller link in the Provided APIs column. 
+   Select "my-nginx-ingress-controller", and then click YAML to include the following ConfigMap under Spec:
 
    .. code-block::
 
@@ -115,6 +116,8 @@ Custom resources can appear and disappear in a running cluster through dynamic r
         set-real-ip-from: "0.0.0.0/0"
         http-snippets  : |
           proxy_cache_path /var/tmp/a levels=1:2 keys_zone=my_cache:10m max_size=100m inactive=60m use_temp_path=off;
+
+   Click Save, and Reload
 
    Step 2.  NGINX Dashboard should be updated with the cache location
 
@@ -182,8 +185,11 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    .. code-block::
 
-      curl --insecure https://$nginx_ingress/ --cert https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem
+      wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-cert.pem
+      wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/client-key.pem
 
+      curl --insecure https://$nginx_ingress/ --cert client-cert.pem --key client-key.pem
+      
    Example:
 
    |image44|

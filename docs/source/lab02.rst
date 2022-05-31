@@ -23,11 +23,33 @@ NGINX Unit is a dynamic application server capable of running beside NGINX Plus 
    - Kubernetes deployment for the four docker containers
    - Kubernetes services for the four docker containers
 
-   In the terminal window, copy the below text and paste+enter:
+   Get the yaml file. In the terminal window, copy the below text and paste+enter:
 
    .. code-block::
 
-      oc apply -f https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadia.yml
+    wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/arcadia.yml
+
+   For this lab, we saved the container images to *quay.io*, a Red Hat hosted container image registry. We would need to modify the yaml file to use the *quay.io* registry:
+
+   - quay.io/repository/redhat-gpst/rhpds-nginxplus-arcadia-main
+   - quay.io/repository/redhat-gpst/rhpds-nginxplus-arcadia-backend
+   - quay.io/repository/redhat-gpst/rhpds-nginxplus-arcadia-app2
+   - quay.io/repository/redhat-gpst/rhpds-nginxplus-arcadia-app3
+  
+   Alternativelly, you can copy the below text and paste+enter:
+
+   .. code-block::
+
+      sed -i -e "s/tonymarfil\/arcadia-main:unit/quay.io\/redhat-gpst\/rhpds-nginxplus-arcadia-main/" arcadia.yml
+      sed -i -e "s/tonymarfil\/arcadia-backend:unit/quay.io\/redhat-gpst\/rhpds-nginxplus-arcadia-backend/" arcadia.yml
+      sed -i -e "s/tonymarfil\/arcadia-app2:unit/quay.io\/redhat-gpst\/rhpds-nginxplus-arcadia-app2/" arcadia.yml
+      sed -i -e "s/tonymarfil\/arcadia-app3:unit/quay.io\/redhat-gpst\/rhpds-nginxplus-arcadia-app3/" arcadia.yml
+
+   Apply the updated yaml file. In the terminal window, copy the below text and paste+enter:
+
+   .. code-block::
+
+      oc apply -f ./arcadia.yml
 
    Example:
 
