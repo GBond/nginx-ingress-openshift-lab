@@ -5,6 +5,7 @@ Command Line Interface
 #######################
 
 OpenShift includes a feature-rich web console with both an Administrator perspective and a Developer perspective. In addition to the web console, OpenShift includes command line tools to provide users with a nice interface to work with applications deployed to the platform. The oc command line tool is an executable written in the Go programming language and is available for the following operating systems:
+
    - Microsoft Windows
    - macOS 10
    - Linux
