@@ -80,7 +80,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
    .. literalinclude :: nginx-ingress-dashboard.yml
       :language: yaml
 
-   Get the dashboard yaml.  Open the yaml file, and update the app selector to *my-nginx-ingress-controller*:
+   Get the dashboard yaml.  Open the yaml file, and update the app selector to *my-nginx-ingress-controller-nginx-ingress*:
    
      .. code-block::
 
@@ -104,7 +104,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
             protocol: TCP
             name: http
           selector:
-            app: my-nginx-ingress-controller
+            app: my-nginx-ingress-controller-nginx-ingress
         
    Expose the Dashboard. In the terminal window copy the below text and paste+enter:
 
@@ -140,7 +140,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
     .. code-block::
 
-       export nginx_ingress=$(oc get svc my-nginx-ingress-controller --namespace=nginx-ingress | tr -s " " | cut -d' ' -f4 | grep -v "EXTERNAL-IP")
+       export nginx_ingress=$(oc get svc my-nginx-ingress-controller-nginx-ingress --namespace=nginx-ingress | tr -s " " | cut -d' ' -f4 | grep -v "EXTERNAL-IP")
 
 7.  Browse to the exposed NGINX Ingress Controller services
 
