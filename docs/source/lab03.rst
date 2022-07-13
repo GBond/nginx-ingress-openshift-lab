@@ -110,12 +110,27 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    .. code-block::
 
-      configMapData:
-        proxy-protocol: "True"
-        real-ip-header: "proxy_protocol"
-        set-real-ip-from: "0.0.0.0/0"
-        http-snippets  : |
-          proxy_cache_path /var/tmp/a levels=1:2 keys_zone=my_cache:10m max_size=100m inactive=60m use_temp_path=off;
+    config:
+      annotations: {}
+      entries:
+        http-snippets: >
+          proxy_cache_path /var/tmp/a levels=1:2 keys_zone=my_cache:10m
+          max_size=100m inactive=60m use_temp_path=off;
+        proxy-protocol: 'True'
+        real-ip-header: proxy_protocol
+        set-real-ip-from: 0.0.0.0/0
+
+   In the same yaml file, we also need to add two annotations to the AWS LoadBalancer service. The annonations specify TCP layer 4 proxying: the ELB forwards traffic without modifying the headers.
+
+   .. code-block::
+
+    service:
+      externalIPs: []
+      customPorts: []
+      loadBalancerIP: ''
+      annotations:
+        service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
+        service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
 
    Click Save, and Reload
 
@@ -140,7 +155,7 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    NGINX Ingress Controller URL (replace with the nginx-ingress EXTERNAL-IP): ``https://EXTERNAL-IP/``
 
-5. HTTPS with Active Monitors, Caching, mTLS
+1. HTTPS with Active Monitors, Caching, mTLS
 
    NGINX Ingress Controller can participate in the mTLS cert exchange with services.
 
@@ -194,11 +209,11 @@ Custom resources can appear and disappear in a running cluster through dynamic r
 
    |image44|
 
-6. The fun does not need to stop yet!
+2. The fun does not need to stop yet!
 
    The NGINX product team creates several examples of using NGINX VirtualServers, Ingress, and Configmaps, all of the examples in the `nginxinc GitHub repository`_ will also work in this environment.
 
-7. NGINX Examples have all been completed
+3. NGINX Examples have all been completed
 
 
 
