@@ -80,13 +80,21 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
    .. literalinclude :: nginx-ingress-dashboard.yml
       :language: yaml
 
-   Get the dashboard yaml.  Open the yaml file, and update the app selector to *my-nginx-ingress-controller-nginx-ingress*:
+   Use wget to download the dashboard yaml.  
    
      .. code-block::
 
       wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/nginx-ingress-dashboard.yml
-  
-     
+       
+
+   Next, we have to change the app selector in the yaml file. We can do this with sed.
+
+     .. code-block::
+
+        sed -ie 's/app\:\ nginx-ingress/app\:\ my-nginx-ingress-controller-nginx-ingress/' nginx-ingress-dashboard.yml
+
+   The yaml should now look like this:     
+
      .. code-block:: yaml
 
         apiVersion: v1
@@ -108,9 +116,9 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
         
    Expose the Dashboard. In the terminal window copy the below text and paste+enter:
 
-   .. code-block::
+       .. code-block::
 
-      oc apply -f nginx-ingress-dashboard.yml
+            oc apply -f nginx-ingress-dashboard.yml
 
 5. See the NGINX Ingress Controller services
 
