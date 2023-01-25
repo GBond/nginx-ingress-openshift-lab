@@ -76,10 +76,6 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    NGINX Ingress Controller (all purchased editions) have an internal dashboard that can be exposed. The Dashboard presents analytic stats of services deployed on NGINX. These same stats can also be exposed for collection systems like Prometheus.
 
-
-   .. literalinclude :: nginx-ingress-dashboard.yml
-      :language: yaml
-
    Use wget to download the dashboard yaml.  
    
      .. code-block::
