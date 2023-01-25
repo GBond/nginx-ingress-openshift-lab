@@ -48,7 +48,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
 1. In the terminal window copy the below text and paste+enter, to verify that the Operator is running
    
-   .. code-block::
+   .. code-block:: bash
 
       oc get pods -n nginx-ingress -o wide
 
@@ -64,7 +64,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    run this command in a terminal, to verify that the NGINX Ingress Controller is running:
 
-   .. code-block::
+   .. code-block:: bash
 
       oc -n nginx-ingress get pods -o wide
 
@@ -112,7 +112,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
         
    Expose the Dashboard. In the terminal window copy the below text and paste+enter:
 
-       .. code-block::
+       .. code-block:: bash
 
             oc apply -f nginx-ingress-dashboard.yml
 
@@ -124,7 +124,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
    In the terminal window, copy the below text and paste+enter:
 
-   .. code-block::
+   .. code-block:: bash
 
       oc get svc --namespace=nginx-ingress
 
@@ -138,11 +138,11 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
     In the terminal window copy the below text and paste+enter:
 
-    .. code-block::
+    .. code-block:: bash
 
        export dashboard_nginx_ingress=$(oc get svc dashboard-nginx-ingress --namespace=nginx-ingress | tr -s " " | cut -d' ' -f4 | grep -v "EXTERNAL-IP")
 
-    .. code-block::
+    .. code-block:: bash
 
        export nginx_ingress=$(oc get svc my-nginx-ingress-controller-nginx-ingress --namespace=nginx-ingress | tr -s " " | cut -d' ' -f4 | grep -v "EXTERNAL-IP")
 
