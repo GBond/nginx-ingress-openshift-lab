@@ -83,7 +83,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
       wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/nginx-ingress-dashboard.yml
        
 
-   Next, we have to change the app selector in the yaml file. We can do this with sed.
+   Next, we have to change the app selector in the yaml file. We can do this with *sed* command.
 
      .. code-block:: bash
 
