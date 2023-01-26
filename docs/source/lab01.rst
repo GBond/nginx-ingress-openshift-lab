@@ -74,7 +74,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
 
 4. Expose the NGINX Ingress Controller Dashboard
 
-   NGINX Ingress Controller (all purchased editions) have an internal dashboard that can be exposed. The Dashboard presents analytic stats of services deployed on NGINX. These same stats can also be exposed for collection systems like Prometheus.
+   NGINX Ingress Controller (all purchased editions) have an internal dashboard that can be exposed. The Dashboard provids analytic stats of services deployed on NGINX. These stats can also be exposed to collection systems like Prometheus.
 
    Use wget to download the dashboard yaml.  
    
@@ -83,7 +83,7 @@ we also deployed the NGINX Plus Ingress Controller for Kubernetes deployment.
       wget https://raw.githubusercontent.com/f5devcentral/f5-digital-customer-engagement-center/main/solutions/delivery/application_delivery_controller/nginx/kic/templates/nginx-ingress-dashboard.yml
        
 
-   Next, we have to change the app selector in the yaml file. We can do this with *sed* command.
+   Next, we have to change the app selector in the yaml file. We can do this with the *sed* command.
 
      .. code-block:: bash
 
